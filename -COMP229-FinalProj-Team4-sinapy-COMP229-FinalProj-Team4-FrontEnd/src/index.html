@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>COMP229FinaProjectTeam4FrontEnd</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- =-=-=-=-=-=-= Template CSS Style =-=-=-=-=-=-= -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- =-=-=-=-=-=-= Google Fonts =-=-=-=-=-=-= -->
+</head>
+<body>
+  <app-root></app-root>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+   Bootstrap Core Css
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Jquery Smooth Scroll  -->
+  <script src="assets/js/jquery.smoothscroll.js"></script>
+  <!-- Jquery Easing -->
+  <script type="text/javascript" src="assets/js/easing.js"></script>
+  <!-- Jquery Counter -->
+  <script src="assets/js/jquery.countTo.js"></script>
+  <!-- Jquery Waypoints -->
+  <script src="assets/js/jquery.waypoints.js"></script>
+  <!-- Jquery Appear Plugin -->
+  <script src="assets/js/jquery.appear.min.js"></script>
+  <!-- Carousel Slider  -->
+  <script src="assets/js/carousel.min.js"></script>
+  <!-- Jquery Parallex -->
+  <script src="assets/js/jquery.stellar.min.js"></script>
+  <!--Style Switcher -->
+  <script src="assets/js/bootstrap-dropdownhover.min.js"></script>
+  <!-- Include jQuery Syntax Highlighter -->
+  <script type="text/javascript" src="assets/scripts/shCore.js"></script>
+  <script type="text/javascript" src="assets/scripts/shBrushPhp.js"></script>
+  <!-- Template Core JS -->
+  <script src="/assets/js/custom.js"></script>
+  <!-- FOR THIS PAGE ONLY -->
+  <script src="/node_modules/angular-imagesloaded/dist/angular-imagesloaded.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+
+  <script type="text/javascript">
+    (function($) {
+      "use strict";
+      $('#posts-masonry').imagesLoaded(function() {
+        $('#posts-masonry').isotope({
+          layoutMode: 'masonry',
+          transitionDuration: '0.3s'
+        });
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>

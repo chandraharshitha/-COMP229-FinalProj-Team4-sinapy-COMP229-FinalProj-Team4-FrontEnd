@@ -1,0 +1,130 @@
+<app-header></app-header>
+<!-- HEADER Navigation End -->
+
+<!-- =-=-=-=-=-=-= Main Area =-=-=-=-=-=-= -->
+<div class="main-content-area">
+
+  <!-- =-=-=-=-=-=-= Page Breadcrumb =-=-=-=-=-=-= -->
+  <section class="page-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-7 co-xs-12 text-left">
+          <h4>Edit Post</h4>
+        </div>
+        <!-- end col -->
+        <div class="col-md-6 col-sm-5 co-xs-12 text-right">
+          <div class="bread">
+            <ol class="breadcrumb">
+              <li><a routerLink="/">Home</a>
+              </li>
+              <li><a href="#">Pages</a>
+              </li>
+              <li class="active">Edit Post</li>
+            </ol>
+          </div>
+          <!-- end bread -->
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </section>
+
+  <!-- =-=-=-=-=-=-= Page Breadcrumb End =-=-=-=-=-=-= -->
+
+  <!-- =-=-=-=-=-=-= Blog & News =-=-=-=-=-=-= -->
+  <section id="blog" class="custom-padding white">
+    <div class="container">
+      <!-- Row -->
+
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-xs-12  center-responsive">
+          <div *ngIf="!submitted">
+            <div class="form-group">
+              <input type="hidden"
+                     name="id"
+                     [(ngModel)]="post._id"
+              >
+              <label for="taskTextField">Title</label>
+              <input type="text" class="form-control"
+                     id="taskTextField"
+                     placeholder="Enter the title here"
+                     name="title"
+                     [(ngModel)]="post.title"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label for="descriptionTextField">Price</label>
+              <input type="number" class="form-control"
+                     id="descriptionTextField"
+                     placeholder="Enter the price here"
+                     name="price"
+                     [(ngModel)]="post.price"
+                     required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="sel1">Select list:</label>
+              <select class="form-control" name="status"
+                      required id="sel1"
+                      [(ngModel)]="post.status"
+                      #statusField
+              >
+                <option *ngFor="let option of options; index as i" value="{{options[i]}}" [selected]="post.status == options[i]">{{options[i]}}</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="expireOnTextField">Expire On</label>
+              <input type="date" class="form-control"
+                     id="expireOnTextField"
+                     placeholder="Enter expire date"
+                     name="expires_on"
+                     [(ngModel)]="post.expires_on"
+                     required
+                     [disabled]="statusField.selectedIndex===1"
+              >
+            </div>
+
+            <br/>
+            <button class="btn btn-primary" type="submit" (click)="savePost()" >
+              <i class="fas fa-edit"></i>
+              Submit
+            </button>
+
+            <a routerLink="/" class="btn btn-warning">
+              <i class="fas fa-undo"></i>
+              Cancel
+            </a>
+
+          </div>
+          <div *ngIf="submitted">
+            <h4>Post was updated successfully!</h4>
+            <button class="btn btn-success" [routerLink]="['/products/view-posts']">View Posts</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row End -->
+    </div>
+    <!-- end container -->
+  </section>
+  <!-- =-=-=-=-=-=-= Blog & News end =-=-=-=-=-=-= -->
+
+
+  <!-- =-=-=-=-=-=-= Download App =-=-=-=-=-=-= -->
+
+  <!-- =-=-=-=-=-=-= Download App END =-=-=-=-=-=-= -->
+
+  <!-- =-=-=-=-=-=-= Our Clients =-=-=-=-=-=-= -->
+
+  <!-- =-=-=-=-=-=-= Our Clients -end =-=-=-=-=-=-= -->
+
+</div>
+<!-- =-=-=-=-=-=-= Main Area End =-=-=-=-=-=-= -->
+
+<!-- =-=-=-=-=-=-= FOOTER =-=-=-=-=-=-= -->
+<app-footer></app-footer>

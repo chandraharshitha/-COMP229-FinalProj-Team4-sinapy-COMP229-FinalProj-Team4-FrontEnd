@@ -1,0 +1,157 @@
+<app-header></app-header>
+<!-- HEADER Navigation End -->
+
+<!-- =-=-=-=-=-=-= Main Area =-=-=-=-=-=-= -->
+<div class="main-content-area">
+
+  <!-- =-=-=-=-=-=-= Page Breadcrumb =-=-=-=-=-=-= -->
+  <section class="page-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-7 co-xs-12 text-left">
+          <h1>Sign In To Your Account</h1>
+        </div>
+        <!-- end col -->
+        <div class="col-md-6 col-sm-5 co-xs-12 text-right">
+          <div class="bread" style="float:right">
+            <ol class="breadcrumb">
+              <li><a href="#">Home/</a>
+              </li>
+              <li><a href="#">Pages/</a>
+              </li>
+              <li class="active">Login</li>
+            </ol>
+          </div>
+          <!-- end bread -->
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </section>
+
+  <!-- =-=-=-=-=-=-= Page Breadcrumb End =-=-=-=-=-=-= -->
+
+  <!-- =-=-=-=-=-=-= Login Form =-=-=-=-=-=-= -->
+  <section class="section-padding-80 white" id="login">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+          <div class="box-panel">
+
+            <!-- buttons top -->
+            <!-- <a href="#" class="btn btn-default facebook"><i class="fa fa-facebook icons"></i> Sign In with Facebook</a>
+            <a href="#" class="btn btn-default google"><i class="fa fa-google-plus icons"></i> Sign In with Google</a> -->
+            <!-- end buttons top -->
+
+            <!-- <p class="text-center margin-top-10"><span class="span-line">OR</span>
+            </p> -->
+
+            <!-- form login -->
+            <form
+              *ngIf="!isLoggedIn"
+              name="form"
+              (ngSubmit)="f.form.valid && onSubmit()"
+              #f="ngForm"
+              novalidate
+            >
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  class="form-control"
+                  [(ngModel)]="form.email"
+                  #email="ngModel"
+                  required>
+              </div>
+              <div
+                class="alert alert-danger"
+                role="alert"
+                *ngIf="f.submitted && email.invalid"
+              >
+                Email is required
+
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Your Password"
+                  class="form-control"
+                  [(ngModel)]="form.password"
+                  #password="ngModel"
+                  required>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <div class="checkbox flat-checkbox">
+                      <label>
+                        <input type="checkbox">
+                        <span class="fa fa-check"></span> Remember me?
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    class="alert alert-danger"
+                    role="alert"
+                    *ngIf="f.submitted && password.invalid"
+                  >
+                    Password must be at least 6 characters
+                  </div>
+<!--                  <div *ngIf="password.errors['required']">Password is required</div>-->
+<!--                  <div *ngIf="password.errors['minlength']">-->
+<!--                    Password must be at least 6 characters-->
+<!--                  </div>-->
+                  <div class="col-xs-6 text-right">
+                    <p class="help-block"><a data-toggle="modal" href="/forgot_password" >Forgot password?</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block">Log In</button>
+              </div>
+              <div class="form-group">
+                <div
+                  class="alert-danger alert"
+                  role="alert"
+                  *ngIf="f.submitted && isLoginFailed"
+                  >
+                  Login failed: {{errorMessage}}
+                </div>
+              </div>
+
+
+            </form>
+
+            <div class="alert alert-success" *ngIf="isLoggedIn">
+              Logged in as {{roles}}
+            </div>
+            <!-- form login -->
+
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <!-- end container -->
+  </section>
+  <!-- =-=-=-=-=-=-= Login Form   End =-=-=-=-=-=-= -->
+
+  <!-- =-=-=-=-=-=-= Our Clients =-=-=-=-=-=-= -->
+
+  <!-- =-=-=-=-=-=-= Our Clients -end =-=-=-=-=-=-= -->
+
+</div>
+<!-- =-=-=-=-=-=-= Main Area End =-=-=-=-=-=-= -->
+
+<!-- =-=-=-=-=-=-= FOOTER =-=-=-=-=-=-= -->
+<app-footer></app-footer>
